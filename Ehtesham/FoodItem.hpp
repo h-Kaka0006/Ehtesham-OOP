@@ -4,13 +4,6 @@
 #include<iostream>
 #include<string>
 
-class FoodItem{
-    private:
-        Food food;
-        int amount;
-        int ID;
-};
-
 class Food{
     private:
         std::string name;
@@ -20,6 +13,17 @@ class Food{
     public:
         Food(std::string _name, int _price, std::string _info);
         
+};
+
+class FoodItem{
+    private:
+        Food* food;
+        int amount;
+        int ID;
+        static int ID_count;
+
+    public:
+        FoodItem(Food* _food, int _amount);
 };
 
 #endif
