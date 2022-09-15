@@ -41,6 +41,7 @@ class Student: public Person {
             gpa = 0;
             grade = _grade;
         }
+    void intro(){cout << firstname << endl;}
 };
 
 class Teacher: public Person {
@@ -75,7 +76,30 @@ class Course {
 
 };
 
-class MyInt {
+class school{
+    private:
+        string name;
+        vector<Student*> students;
+        vector<Teacher*> teachers;
+    public:
+        school(string _name){name = _name;}
+        void intro(){
+            cout << name << endl;
+            for(int i=0;i<students.size();i++){
+                student->intro();
+                endl;
+            }
+        }
+
+
+
+};
+
+
+
+
+
+/*class MyInt {
     private:
         int value;
     
@@ -88,7 +112,7 @@ class MyInt {
             return ans;
         }
         MyInt(int _value){value = _value;}
-};
+};*/
 
 int main(){
 
@@ -97,9 +121,10 @@ int main(){
     course->describe();
     course->add_description("this is the most valuable course in school!");
     course->describe();
-    int n;
+    /*int n;
     cin >> n;
     MyInt a(n);
-    cout << a * "hasan" << endl;
+    cout << a * "hasan" << endl;*/
+    school -> intro();
     return 0;
 }
